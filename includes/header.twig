@@ -1,0 +1,14 @@
+<!-- Header Include !-->
+
+<header class="bk-header">
+	<div class="container">
+		{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png'),"showTplWidget":"0"})|raw}}
+		{{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+	</div>
+</header>
+	<nav class="bk-nav">
+		<div class="container">
+			{{widget('extendednavigation', 'header-navigation', {"align":"center"})|raw}}
+		</div>
+	</nav>
+</div><!--end container-->

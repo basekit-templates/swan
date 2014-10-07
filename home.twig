@@ -1,0 +1,32 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+{% include 'includes/header.twig' %}
+
+{{widget('responsiveslideshow', 'responsiveslideshow',
+	{'duration':'6',
+		'transSpeed': '1200',
+		'transType': 'fade',
+		'showButtons': false,
+		'showBullets': false,
+		'allowPause': false,
+		'allowLoop': false,
+		'showDescription': true,
+		'showTitle': true,
+		'crop': true,
+		'images': [
+			{'imageHeight':'auto', 'imageWidth':'100%', 'url':asset('images/slideshow-1.jpg')},
+			{'imageHeight':'auto', 'imageWidth':'100%', 'url':asset('images/slideshow-1.jpg')}
+		]
+	})|raw
+}}
+
+<div role="main">
+	<div class="container">
+		{{zone('main')|raw}}
+	</div><!--end container-->
+</div><!--end main-->
+
+{% include 'includes/footer.twig' %}
+
+{% endblock %}
