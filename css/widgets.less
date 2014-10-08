@@ -21,8 +21,8 @@ button.btn,
 .ecombasket-remove-button,
 .widget.dropbox .file-name,
 .productlist-filter .productlist-search .btn  {
-	background-color: @font-swatch7-background-color;
-	.border-radius(6px);
+	background-color: @font-swatch7-background-color-hover;
+	.border-radius(4px);
 	color: @font-swatch7-color;
 	font-family: @font-swatch7-font-family;
 	font-size: @font-swatch7-font-size;
@@ -39,7 +39,7 @@ button.btn,
 	&:hover {
 		color: @color-swatch1;
 		text-decoration: none;
-		background-color: @font-swatch7-background-color-hover;
+		background-color: lighten(@font-swatch7-background-color, 15%);
 		.transition(background-color, .5s, ease-in);
 	}
 }
@@ -88,17 +88,18 @@ button {
 .widget.button button.btn, .widget.contactform button.btn {
 	background-color: transparent;
 	border: none;
-	border-top: 3px solid lighten(@color-swatch5, 35%);
-	border-bottom: 3px solid lighten(@color-swatch5, 35%);
+	border-top: 3px solid lighten(@color-swatch5, 28%);
+	border-bottom: 3px solid lighten(@color-swatch5, 28%);
+	.border-radius(0);
 	cursor: pointer;
-	color: @font-swatch5-color;
+	color: lighten(@font-swatch5-color, 5%);
 	display: inline-block;
-	font-size: 13px;
-	font-weight: 500;
+	font-size: 12px;
+	font-weight: 600;
 	line-height: 22px;
-	letter-spacing: inherit;
+	letter-spacing: 1px;
 	margin: 0;
-	padding: 11px 16px;
+	padding: 8px 12px;
 	position: relative;
 	left: 25px;
 	text-decoration: none;
@@ -111,23 +112,23 @@ button {
 		color: @color-swatch5;
 	}
 	&:before, &:after {
-		border-bottom: 3px solid lighten(@color-swatch5, 35%);
+		border-bottom: 3px solid lighten(@color-swatch5, 28%);
 		content: "";
 		position: absolute;
 		top: 4px;
-		width: 36px;
-		height: 35px;
+		width: 35px;
+		height: 34px;
 		.transition(all, .5s, ease-out);
 	}
 	&:before {
-		left: -19px;
+		left: -18px;
 		.rotate(45deg);
-		border-left: 3px solid lighten(@color-swatch5, 35%);
+		border-left: 3px solid lighten(@color-swatch5, 28%);
 	}
 	&:after {
-		right: -19px;
+		right: -18px;
 		.rotate(-45deg);
-		border-right: 3px solid lighten(@color-swatch5, 35%);
+		border-right: 3px solid lighten(@color-swatch5, 28%);
 	}
 }
 
@@ -136,12 +137,16 @@ button {
 // Forms
 // -----------------------------
 
+label {
+	font-family: @font-swatch5-font-family!important;
+	font-size: @font-swatch5-font-size!important;
+}
 
 // Single Input Forms
 
 .widget {
 	&.profile, &.signupform, &.blogsearch {
-		form fieldset input, form input, input, button, button.btn {
+		form fieldset input, form input, input, button {
 			padding-left: 15px;
 			padding-right: 15px;
 			position: relative;
@@ -158,25 +163,23 @@ button {
 
 .widget.contactform {
 	label {
-		text-indent: -9999em;
-		overflow: hidden;
-		height: 0;
+		margin-bottom: 8px;
 	}
 	input, textarea {
 		background-color: @color-swatch6;
-		border: 1px solid lighten(@color-swatch5, 35%);
-		.border-radius(6px);
+		border: 1px solid lighten(@color-swatch5, 30%);
+		.border-radius(4px);
 		color: @color-swatch5;
 		font-size: @font-swatch5-font-size;
 		outline: none;
 		margin-bottom: 20px;
-		padding: 12px 15px;
+		padding: 10px 15px;
 		-webkit-appearance: none;
 	    -moz-appearance: none;
 	    appearance: none;
 	    .transition(all, .25s, ease-out);
 	    &:focus {
-	    	border: 1px solid lighten(@color-swatch5, 25%);
+	    	border: 1px solid lighten(@color-swatch5, 20%);
 	    	color: @color-swatch5;
 	    }
 	}
@@ -198,9 +201,6 @@ button {
 			display: inline-block;
 		}
 	}
-	button.btn {
-		padding: 11px 25px;
-	}
 }
 
 
@@ -208,20 +208,23 @@ button {
 
 .widget.profile form fieldset input {
 	background-color: @color-swatch6;
-	border: 1px solid lighten(@color-swatch5, 35%);
-	.border-radius(6px);
+	border: 1px solid lighten(@color-swatch5, 30%);
+	.border-radius(4px);
 	color: @color-swatch5;
 	font-size: @font-swatch5-font-size;
 	outline: none;
 	margin-bottom: 20px;
-	padding: 12px 15px 12px 0;
+	padding: 10px 15px 10px 0;
 	-webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     .transition(all, .25s, ease-out);
     &:focus {
-    	border: 1px solid lighten(@color-swatch5, 25%);
+    	border: 1px solid lighten(@color-swatch5, 24%);
     	color: @color-swatch5;
+    }
+    @media @mobile {
+    	margin-top: 6px;
     }
 }
 
@@ -236,28 +239,28 @@ button {
 
 .widget.signupform form fieldset input {
 	background-color: @color-swatch6;
-	border: 1px solid lighten(@color-swatch5, 35%);
-	.border-radius(6px);
+	border: 1px solid lighten(@color-swatch5, 30%);
+	.border-radius(4px);
 	color: @color-swatch5;
 	font-size: @font-swatch5-font-size;
 	outline: none;
 	margin-bottom: 20px;
-	padding: 12px 15px;
+	padding: 10px 15px;
 	-webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     .transition(all, .25s, ease-out);
     &:focus {
-    	border: 1px solid lighten(@color-swatch5, 25%);
+    	border: 1px solid lighten(@color-swatch5, 24%);
     	color: @color-swatch5;
     }
 }
 
 .widget.signupform fieldset button.btn {
-	max-width: 18%;
-	width: 100%;
+	/*max-width: 18%;
+	width: 100%;*/
 	@media @mobile {
-		margin-top: 20px;
+		margin-top: 0;
 		max-width: 100%;
 	}
 } 
@@ -272,19 +275,19 @@ button {
 
 .widget.blogsearch form input {
 	background-color: @color-swatch6;
-	border: 1px solid lighten(@color-swatch5, 35%);
-	.border-radius(6px);
+	border: 1px solid lighten(@color-swatch5, 30%);
+	.border-radius(4px);
 	color: @color-swatch5;
 	font-size: @font-swatch5-font-size;
 	outline: none;
 	margin-bottom: 20px;
-	padding: 12px 15px;
+	padding: 10px 15px;
 	-webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     .transition(all, .25s, ease-out);
     &:focus {
-    	border: 1px solid lighten(@color-swatch5, 25%);
+    	border: 1px solid lighten(@color-swatch5, 24%);
     	color: @color-swatch5;
     }
 }
@@ -294,14 +297,14 @@ button {
 
 .widget.profile form fieldset input, .widget.signupform form fieldset input, .widget.blogsearch form input {
 	margin-right: 5px;
-	width: 80%;
+	/*width: 80%;*/
 	@media @mobile {
 		width: 100%;
 	}
 	+ button, button.btn {
 		max-width: 20%;
 		@media @mobile {
-			margin-top: 15px;
+			margin-top: 0;
 			max-width: 100%;
 			width: 100%;
 		}
@@ -335,15 +338,18 @@ button {
 .widget.socialicons span a, .widget.socialicons span a:hover, .widget.profile .bk-profile-socialicons span a, .widget.profile .bk-profile-socialicons span a:hover {
 	background-color: transparent;
 	background-size: 20px;
-	border: 3px solid lighten(@color-swatch5, 35%);
+	border: 3px solid @color-swatch5;
 	color: @color-swatch3;
+	opacity: 0.4;
 	height: 42px;
 	width: 42px;
+	.transition(opacity, .5s, ease-out);
 }
 
 .widget.socialicons span a:hover, .widget.profile .bk-profile-socialicons span a:hover {
 	background-size: 20px;
 	border: 3px solid @color-swatch5;
+	opacity: 1;
 }
 
 .svg {
@@ -445,6 +451,7 @@ div[role="main"] .widget {
 			.title {
 				opacity: 1;
 				color: #fff;
+				font-weight: @font-swatch2-font-weight;
 				-webkit-transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
 				transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
 			}
@@ -456,7 +463,7 @@ div[role="main"] .widget {
 		}
 		span.inner {
 			border: 10px solid @color-swatch6;
-			outline: 2px solid lighten(@color-swatch5, 40%);
+			outline: 2px solid lighten(@color-swatch5, 33%);
 			.title,
 			.description {
 				color: @color-swatch1;
@@ -517,7 +524,7 @@ div[role="main"] .widget {
 
 .widget.responsiveslideshow {
 	.btn-play, &:hover span.btn-play {
-		display; none;
+		display: none;
 	}
 	.slideshow-widget {
 		.btns-move {
@@ -600,6 +607,9 @@ div[role="main"] .widget {
 .widget.responsiveslideshow, .widget.responsiveslideshow .slideshow-image-list {
 	min-height: 550px;
 	height: auto;
+	@media @mobile {
+		min-height: 350px;
+	}
 }
 
 .widget.responsiveslideshow {
@@ -639,6 +649,22 @@ div[role="main"] .widget {
 .widget.responsiveslideshow span.inner img {
 	display: initial;
 }
+
+
+// Slideshow (Draggable into the main zone)
+
+
+div[role="main"] {
+	.widget.responsiveslideshow {
+		.title:after, .description:after {
+			display: none;
+		}
+		.content-wrapper {
+			bottom: 0;
+		}
+	}
+}
+
 
 // Twitter
 
@@ -729,7 +755,7 @@ div[role="main"] {
 // Dividing Line
 
 hr.line {
-	background-color: lighten(@color-swatch5, 35%);
+	background-color: lighten(@color-swatch5, 30%);
 }
 
 
@@ -737,21 +763,21 @@ hr.line {
 
 blockquote {
 	color: @font-swatch4-color;
-	font-size: bkscale(@font-swatch1-font-size 0.75);
-	line-height: bkscale(@font-swatch1-font-size 0.85);
+	font-size: bkscale(@font-swatch1-font-size, 0.75);
+	line-height: bkscale(@font-swatch1-font-size, 0.85);
 	padding: 35px 35px 40px 55px;
 	text-align: center;
 	&:before {
-		color: lighten(@font-swatch5-color, 35%);
+		color: lighten(@font-swatch5-color, 28%);
 		font-size: 85px;
 		content: open-quote;
 		display: block;
 		margin: 0 auto;
 		text-align: center;
-		width: 68px;
-		border: 3px solid lighten(@font-swatch5-color, 35%);
+		width: 66px;
+		border: 3px solid lighten(@font-swatch5-color, 30%);
 		.border-radius(100px);
-		height: 68px;
+		height: 66px;
 		line-height: 68px;
 		padding: 20px 0;
 		margin-bottom: 25px;
@@ -760,10 +786,10 @@ blockquote {
 		position: relative;
 	}
 	&:after {
-		border: 1px solid lighten(@font-swatch5-color, 40%);
+		border: 1px solid lighten(@font-swatch5-color, 33%);
 		content: "";
 		display: block;
-		margin: 25px auto 0;
+		margin: 28px auto 0;
 		width: 50%;
 	}
 }

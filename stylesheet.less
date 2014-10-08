@@ -111,7 +111,7 @@ a {
 		margin-bottom: 5px;
 	}
 	&.companyname a {
-		color: @font-swatch-10-font-color;
+		color: @font-swatch10-color;
 		font-family: @font-swatch10-font-family;
 		font-size: @font-swatch10-font-size;
 		font-weight: @font-swatch10-font-weight;
@@ -137,8 +137,11 @@ a {
 
 .widget.extendednavigation ul li a {
 	padding: 0 20px 0 0;
+	@media @tablet {
+		padding: 0;
+	}
 	&:after {
-		color: @font-swatch4-font-color;
+		color: @font-swatch4-color;
 		content: "\2662";
 		display: inline-block;
 		font-size: 9px;
@@ -180,6 +183,9 @@ a {
 	}
 	span.text {
 		padding: 0 30px 0 0;
+		@media @tablet {
+			padding: 0;
+		}
 	}
 	ul li a:after, ul li span:after {
 		display: none;
@@ -216,6 +222,9 @@ a {
 
 .widget.responsiveslideshow {
 	margin-bottom: 40px;
+	@media @mobile {
+		margin-bottom: 0;
+	}
 }
 
 .widget.responsiveslideshow span.inner, .widget.responsiveslideshow .slideshow-image-item, .widget.responsiveslideshow li.slideshow-image-item {
@@ -277,6 +286,9 @@ div[role="main"] {
 		@media @tablet {
 			width: 100%;
 		}
+		@media @mobile {
+			padding-top: 15px;
+		}
 		h3 {
 			color: @color-swatch6;
 			margin-bottom: 5px;
@@ -293,7 +305,7 @@ div[role="main"] {
 			}
 		}
 		input {
-			background-color: @font-swatch7-background-color;
+			background-color: @color-swatch6;
 			.border-radius(4px);
 			border: 0;
 			margin-bottom: 15px;
@@ -327,6 +339,9 @@ div[role="main"] {
 		margin-top: 75px;
 		@media @tablet {
 			margin-top: 35px;
+		}
+		&:focus {
+			border: none;
 		}
 		.bk-profile-copyright {
 			color: darken(@color-swatch5, 10%);

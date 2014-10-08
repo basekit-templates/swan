@@ -8,15 +8,12 @@
 .widget.menusections {
 	margin: 0 0 40px;
 	ul {
-		border-bottom: 1px solid lighten(@color-swatch5, 35%);
+		border-bottom: 1px solid lighten(@color-swatch5, 28%);
 		padding: 25px 15px!important;
 		text-align: center;
 		li {
+			font-family: @font-swatch4-font-family;
 			margin: 0 20px 0 0;
-			@media @mobile {
-				width: 100%;
-				margin: 0;
-			}
 			&:after {
 				color: #a5a5a5;
 				content: "\2662";
@@ -43,7 +40,7 @@
 
 // Menu Sections
 
-.menu-header {
+.menu-header, .menu-subsection-header {
 	margin-top: 25px;
 	padding: 2em 0;
 	&:after {
@@ -54,6 +51,9 @@
 		margin: 25px auto 5px;
 		width: 65px;
 	}
+	@media @mobile {
+		padding-bottom: 0;
+	}
 }
 
 // Main Menu
@@ -61,12 +61,15 @@
 .widget.menu {
 	.main.wrapper {
 		width: 100%;
-		margin: 0 0 2em;
-		border-bottom: 1px solid darken(@color-swatch1,15%);
-		padding-bottom: 30px;
+		margin: 0 0 1.5em;
+		border-bottom: 1px solid lighten(@color-swatch5, 28%);
+		padding-bottom: 40px;
 	}
 	.menu-items li {
 		padding: 1em 0 1.5em;
+	}
+	.menu-name {
+		font-weight: @font-swatch2-font-weight;
 	}
 	.menu-name,
 	.menu-description,
@@ -77,6 +80,7 @@
 		padding-bottom: 0;
 	}
 	.menu-description {
+		font-size: bkscale(@font-swatch5-font-size, 1.1);
 		margin-top: 10px;
 	}
 	.menu-subsection {
@@ -102,7 +106,7 @@
 
 		background: @color-swatch1;
 		font-weight: @font-swatch2-font-weight;
-		padding: 20px 10px 6px;
+		padding: 20px 10px 2px;
 	}
 	.menu-item-image-wrap {
 		-webkit-box-ordinal-group: 1;  
@@ -119,6 +123,7 @@
 		order: 3;
 		p {
 			color: @color-swatch2;
+			font-weight: @font-swatch2-font-weight;
 			padding-bottom: 8px;
 		}
 	}
@@ -132,7 +137,7 @@
 		color: @color-swatch5;
 		font-size: bkscale(@font-swatch5-font-size, 0.95);
 		&:after {
-			border-top: 1px solid lighten(@color-swatch5, 35%);
+			border-top: 1px solid lighten(@color-swatch5, 28%);
 			content: "";
 			display: block;
 			position: relative;
@@ -149,9 +154,9 @@
 
 		color: @color-swatch5;
 		font-family: @font-swatch5-font-family;
-		font-size: bkscale(@font-swatch5-font-size, 0.8);
+		font-size: bkscale(@font-swatch5-font-size, 0.82);
 		font-style: italic;
-		line-height: bkscale(@font-swatch5-line-height, 0.82);
+		line-height: bkscale(@font-swatch5-line-height, 0.84);
 		margin-bottom: 10px;
 	}
 	.menu-item-nutritional-title {
@@ -161,12 +166,12 @@
 		-webkit-order: 5;  
 		order: 5;
 
-		color: @color-swatch4;
+		color: darken(@color-swatch5, 5%);
 		font-family: @font-swatch5-font-family;
-		font-size: bkscale(@font-swatch5-font-size, 0.86);
+		font-size: bkscale(@font-swatch5-font-size, 0.88);
 		font-style: italic;
 		font-weight: @font-swatch2-font-weight;
-		line-height: bkscale(@font-swatch5-line-height, 0.88);
+		line-height: bkscale(@font-swatch5-line-height, 0.9);
 	}
 	.menu-section-item-dietary-props {
 		-webkit-box-ordinal-group: 7;  
@@ -200,9 +205,13 @@
 	.menu-item-name, .menu-item-description, .menu-item-nutritional-prop, .menu-item-nutritional-title, .menu-section-item-dietary-props {
 		margin-left: auto;
 		margin-right: auto;
-		min-width: 70%;
-		max-width: 70%;
+		min-width: 65%;
+		max-width: 65%;
 		position: relative;
+		@media @mobile {
+			min-width: 90%;
+			max-width: 90%;
+		}
 	}
 	.menu-item-image-wrap {
 		background-image: none!important;
@@ -218,10 +227,14 @@
 
 // Promoted Item
 
-.menu .menu-items li.menu-item-promoted,
-.menu-subsection-promoted {
+.menu .menu-items li.menu-item-promoted{
 	padding: 1.5em 1em 2.5em;
-	border: 3px solid lighten(@color-swatch5, 35%);
+	border: 4px solid lighten(@color-swatch5, 30%);
+}
+
+.menu-subsection-promoted {
+	border: 4px solid lighten(@color-swatch5, 30%);
+	padding: 3.5em 1em 2.5em;
 }
 
 .dietary-icon {

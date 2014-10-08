@@ -20,13 +20,27 @@
         margin-bottom: 10px;
         padding: 0;
         &:hover {
-            .ecom-productslist-title, .ecom-productlist-price,
-            .ecom-featuredproducts-title, .ecom-featuredproducts-price {
+            .ecom-productslist-title, .ecom-featuredproducts-title, .ecom-featuredproducts-price {
                 color: darken(@color-swatch4, 20%);
                 &:hover {
                     text-decoration: none;
                 }
             }
+        }
+
+        // Content Wrap
+
+        .ecom-productlist-info {
+            background: @color-swatch1;
+            font-family: @font-swatch5-font-family;
+            font-weight: @font-swatch2-font-weight;
+            margin: 0 auto;
+            max-width: 80%;
+            padding: 18px 20px;
+            position: relative;
+            padding: 18px 20px;
+            text-align: center;
+            top: -38px;
         }
 
         // Image Wrap
@@ -35,6 +49,9 @@
         .ecom-featuredproducts-image-wrap {
             margin-bottom: 1em;
             background-color: darken(@color-swatch1, 3%);
+            background-position: center top;
+            height: auto;
+            min-height: 200px;
         }
         a:hover {
             text-decoration: none;
@@ -56,9 +73,13 @@
 .ecom-productslist-title,
 .ecom-featuredproducts-title {
     padding: 0;
-    font-size: bkscale(@font-swatch4-font-size, 1.08);
-    line-height: @font-swatch4-line-height;
-    font-weight: normal;
+    font-size: bkscale(@font-swatch3-font-size, 1.2);
+    font-weight: @font-swatch2-font-weight;
+    line-height: @font-swatch3-line-height;
+}
+
+.ecom-product-title {
+    padding-bottom: 5px;
 }
 
 // Product Price
@@ -67,8 +88,9 @@
 .ecom-product-price,
 .checkout-pricepu,
 .checkout-amount {
-    font-family: bkscale(@font-swatch2-font-family, 0.95);
-    color: @color-swatch3;
+    color: @color-swatch2;
+    font-size: bkscale(@font-swatch5-font-size, 1.15);
+    font-family: @font-swatch5-font-family;
 }
 
 .checkout-total-amount {
@@ -97,14 +119,15 @@
 .ecom-product-info .ecom-product-variation {
     select {
         width: auto;
-        height: 40px;
+        height: 48px;
         margin-top: 5px;
         margin-bottom: 12px;
         padding: 8px 33px 8px 8px;
         border: 1px solid darken(@color-swatch1, 10%);
-        background-color: darken(@color-swatch1, 4%);
+        background-color: @color-swatch6;
         color: @color-swatch5;
         cursor: pointer;
+        font-size: 13px;
         &:focus {
             outline: 0;
         }
@@ -152,13 +175,14 @@
             -moz-border-radius: 4px;
             -webkit-border-radius: 4px;
             border-radius: 4px;
-            height: 40px;
+            height: 48px;
             margin-top: 5px;
             border: 1px solid darken(@color-swatch1,10%);
-            background-color: darken(@color-swatch1,4%);
+            background-color: @color-swatch6;
             -webkit-appearance: none;
             -moz-appearance: none;
             @media @mobile {
+                margin-bottom: 6px;
                 width: 100%;
             }
         }
@@ -168,7 +192,7 @@
             position: relative;
             margin: 0;
             padding: 4px 14px;
-            margin-top: 5px;
+            margin-top: 5px!important;
             @media @mobile {
                 margin: 20px 0 10px;
                 width: 100%;
@@ -332,6 +356,7 @@
         }
     }
     .ecom-product-info .ecom-product-variation select {
+        min-width: 20%;
         width: auto;
     }
     .ecom-product-preview-image-wrap {
@@ -345,16 +370,15 @@
         font-size: 20px;
     }
     .ecom-product-variation {
-        border-top: 1px solid lighten(@color-swatch5, 65%);
-        border-bottom: 1px solid lighten(@color-swatch5, 65%);
-        padding: 10px 0 2px;
-        margin: 12px 0 2px;
+        padding: 12px 0 2px;
+        margin: 0;
     }
 
     // Add to Cart Button
 
     .btn.ecom-product-add-to-cart-btn {
         padding: 10px 16px;
+        margin: 15px 0;
         background-image: image('/images/ic-basket.png');
         background-repeat: no-repeat;
         background-position: 10% 46%;
@@ -438,22 +462,9 @@
 
     // Product Name, Price, Quantity
 
-    .basket-summary-productname,
-    .basket-summary-pricepu,
-    .basket-summary-quantitybtn,
-    .basket-summary-subtotal,
-    .basket-summary-amount {
-        font-family: @font-swatch4-font-family;
-        font-size: 18px;
-        font-weight: @font-swatch4-font-weight;
-        line-height: @font-swatch4-line-height;
-        letter-spacing: @font-swatch4-letter-spacing;
-        color: @font-swatch4-color;
-    }
-
     .basket-summary-pricepu {
-        font-size: bkscale(@font-swatch5-font-size, 0.9);
-        color: lighten(@color-swatch5, 25%);
+        font-size: @font-swatch5-font-size;
+        color: @color-swatch5;
     }
 
     .basket-summary-quantitybtn, .basket-summary-quantity .basket-summary-quantity-text {
@@ -465,11 +476,16 @@
     .basket-summary-productname {
         display: block;
         line-height: 24px;
-        color: @color-swatch2;
-        font-weight: @font-swatch10-font-weight;
+        color: @font-swatch4-color;
+        font-weight: @font-swatch2-font-weight;
+        font-size: @font-swatch4-font-size;
         &:hover {
-            text-decoration: underline;
+            text-decoration: none;
         }
+    }
+
+    .basket-summary-subtotal {
+        color: @font-swatch4-color;
     }
 
     // Quantity
@@ -485,11 +501,12 @@
         }
         .quantity-number {
             position: relative;
-            background-color: darken(@color-swatch1,3%);
+            background-color: transparent;
             padding: 1px 10px;
             font-size: 14px;
         }
         button {
+            background: transparent;
             .border-radius(50px);
             width: 24px;
             height: 24px;
@@ -497,13 +514,13 @@
             margin: 0;
             border: 0;
             box-shadow: none;
-            background-color: lighten(@color-swatch5, 2%);
-            font-size: 13px;
+            font-size: 14px;
             font-family: @font-swatch4-font-family;
-            color: @color-swatch1;
+            font-weight: @font-swatch2-font-weight;
+            color: @color-swatch5;
             vertical-align: middle;
             &:hover {
-                background-color: @color-swatch2;
+                background-color: transparent;
                 cursor: pointer;
             }
             &:focus {
@@ -523,7 +540,7 @@
         // Heading Row
 
         tr:first-child {
-            background-color: lighten(@color-swatch5, 65%);
+            background-color: darken(@color-swatch1, 4%);
             -webkit-border-top-left-radius: 4px;
             -webkit-border-top-right-radius: 4px;
             -moz-border-radius-topleft: 4px;

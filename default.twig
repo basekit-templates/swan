@@ -4,7 +4,9 @@
 {% include 'includes/header.twig' %}
 
 <div role="main">
-	{{zone('main')|raw}}
+	<div class="container">
+		{{zone('main')|raw}}
+	</div><!--end container-->
 </div><!--end main-->
 
 {% include 'includes/footer.twig' %}
