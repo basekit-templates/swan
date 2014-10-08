@@ -179,6 +179,12 @@
 		-ms-flex-order: 7;     
 		-webkit-order: 7;  
 		order: 7;
+
+		color: @color-swatch5;
+		font-family: @font-swatch4-font-family;
+		font-size: 11px;
+		font-weight: @font-swatch4-font-weight;
+		text-transform: uppercase;
 		.dietary-icon {
 			color: lightne(@color-swatch5, 15%);
 			line-height: 10px;
@@ -196,11 +202,6 @@
 				vertical-align: top;
 			}
 		}
-		color: @color-swatch5;
-		font-family: @font-swatch4-font-family;
-		font-size: 11px;
-		font-weight: @font-swatch4-font-weight;
-		text-transform: uppercase;
 	}
 	.menu-item-name, .menu-item-description, .menu-item-nutritional-prop, .menu-item-nutritional-title, .menu-section-item-dietary-props {
 		margin-left: auto;
@@ -215,11 +216,12 @@
 	}
 	.menu-item-image-wrap {
 		background-image: none!important;
+		background-color: darken(@color-swatch1, 4%);
+		bottom: -40px;
+		position: relative;
+		z-index: -1;
 		img {
-			bottom: -40px;
-			position: relative;
 			max-height: 180px;
-			z-index: -1;
 		}
 	}
 }

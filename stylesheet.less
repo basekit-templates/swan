@@ -116,6 +116,10 @@ a {
 		font-size: @font-swatch10-font-size;
 		font-weight: @font-swatch10-font-weight;
 		line-height: @font-swatch10-line-height;
+		@media @mobile {
+			font-size: bkscale(@font-swatch10-font-size, 0.9);
+			line-height: bkscale(@font-swatch10-line-height, 0.9);	
+		}
 	}
 }
 
@@ -128,27 +132,33 @@ a {
 	font-family: @font-swatch6-font-family;
 	font-size: @font-swatch6-font-size;
 	padding: 8px 5px;
-	text-transform: uppercase;
 	@media @tablet {
-		border-top: 3px solid fade(@color-swatch2, 80%);
-		min-height: 45px;
+		padding: 6px 5px;
+		min-height: 15px;
 	}
 }
 
-.widget.extendednavigation ul li a {
-	padding: 0 20px 0 0;
-	@media @tablet {
-		padding: 0;
+.widget.extendednavigation ul li {
+	&:last-child a:after {
+		display: none;
 	}
-	&:after {
-		color: @font-swatch4-color;
-		content: "\2662";
-		display: inline-block;
-		font-size: 9px;
-		font-weight: @font-swatch2-font-weight;
-		margin-left: 20px;
+	a {
+		padding: 0 20px 0 0;
 		@media @tablet {
-			display: none;
+			padding: 0;
+		}
+		&:after {
+			color: @font-swatch4-color;
+			content: "\2662";
+			display: inline-block;
+			font-size: 9px;
+			font-weight: @font-swatch2-font-weight;
+			margin-left: 20px;
+			position: relative;
+			top: -2px;
+			@media @tablet {
+				display: none;
+			}
 		}
 	}
 }
