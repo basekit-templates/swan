@@ -50,15 +50,23 @@
 	background-image: none!important;
 	margin-bottom: 1.3em;
 	min-height: 250px;
+	max-height: 500px;
+	position: relative;
 	@media @mobile {
 		margin-bottom: .5em;
+		min-height: 150px;
+		max-height: 400px;
 	}
 	img {
+		bottom: 0;
+		left: 0;
+		right: 0;
 		display: block;
 		height: auto;
 		margin: 0 auto;
 		max-width: 100%;
 		padding: 0;
+		position: absolute;
 	}
 }
 

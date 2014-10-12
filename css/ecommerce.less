@@ -49,7 +49,7 @@
         .ecom-featuredproducts-image-wrap {
             margin-bottom: 1em;
             background-color: darken(@color-swatch1, 3%);
-            background-position: center top;
+            background-position: center bottom;
             height: auto;
             min-height: 200px;
         }
@@ -225,13 +225,15 @@
     // Basket
 
     .ecombasket-pull {
+        .border-radius(4px);
         width: 142px;
-        padding: 8px 14px 8px 22px;
+        padding: 14px 14px 14px 6spx;
         background-image: image('/images/ic-basket.png');
         background-repeat: no-repeat;
         background-position: 11% 48%;
         background-size: 14px;
         &:hover {
+            background-color: @font-swatch7-background-color-hover;
             background-image: image('/images/ic-basket-hov.png');
             &:hover {
                 p, .basket-count {
@@ -417,6 +419,7 @@
     }
     .ecom-product-category, .ecom-product-cattag {
         a:first-child:before {
+            color: @font-swatch5-color;
             content: ":";
             padding-right: 4px;
             position: relative;
