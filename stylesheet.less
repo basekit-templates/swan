@@ -253,14 +253,16 @@ a {
 .widget.responsiveslideshow .content-wrapper {
 	background: @color-swatch1;
 	text-align: center;
-	padding: 30px 15px;
+	padding: 35px 15px 0;
 	max-width: 65%;
 	margin: 0 auto;
-	bottom: -125px;
+	bottom: -98px;
 	@media @tablet {
-		bottom: 0;
-		padding: 15px;
+		padding: 20px;
 		max-width: 90%;
+	}
+	@media @mobile {
+		bottom: -60px;
 	}
 }
 
@@ -270,6 +272,12 @@ a {
 // Main
 // -----------------------------
 
+.widget .responsiveslideshow + div[role="main"] {
+	margin-top: 60px;
+	@media @mobile {
+		margin-top: 35px;
+	}
+}
 
 div[role="main"] {
 	padding: 45px 20px;
