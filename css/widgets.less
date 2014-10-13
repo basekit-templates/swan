@@ -14,11 +14,9 @@ button.btn,
 .widget.dropbox button,
 .blog-search-submit-button,
 .widget.ecombasket .ecombasket-list-container .ecombasket-checkout-wrap .ecombasket-checkout-link,
-.widget.ecombasket .ecombasket-list-container ul li .ecombasket-item-info .ecombasket-remove-button,
 .blog-search-submit-button,
 .ecombasket-summary-link,
 .basket-summary-empty-cta,
-.ecombasket-remove-button,
 .widget.dropbox .file-name,
 .productlist-filter .productlist-search .btn  {
 	background-color: @font-swatch7-background-color-hover;
@@ -50,8 +48,11 @@ button.btn,
 }
 
 .widget.clicktocall a {
-	font-weight: 600;
+	.border-radius(4px);
+	font-weight: 400;
+	padding: 12px 10px 12px 38px;
 	&:hover {
+		padding: 12px 10px 12px 38px;
 		.transition(all, .5s, ease-in);
 	}
 }
@@ -360,42 +361,42 @@ label {
 		background-image: image('/images/icons/linkedin.svg');
 		&:hover {
 			background-image: image('/images/icons/linkedin-hover.svg');
-			border: 3px solid #0976b4;
+			border: 3px solid #0976b4!important;
 		}
 	}
 	.bk-socialicons-twitter a {
 		background-image: image('/images/icons/twitter.svg');
 		&:hover {
 			background-image: image('/images/icons/twitter-hover.svg');
-			border: 3px solid  #55acee;
+			border: 3px solid #55acee!important;
 		}
 	}
 	.bk-socialicons-facebook a {
 		background-image: image('/images/icons/facebook.svg');
 		&:hover {
 			background-image: image('/images/icons/facebook-hover.svg');
-			border: 3px solid  #3b5998;
+			border: 3px solid  #3b5998!important;
 		}
 	}
 	.bk-socialicons-rss a {
 		background-image: image('/images/icons/rss.svg');
 		&:hover {
 			background-image: image('/images/icons/rss-hover.svg');
-			border: 3px solid  #f26522;
+			border: 3px solid  #f26522!important;
 		}
 	}
 	.bk-socialicons-googleplus a {
 		background-image: image('/images/icons/googleplus.svg');
 		&:hover {
 			background-image: image('/images/icons/googleplus-hover.svg');
-			border: 3px solid  #dd4b39;
+			border: 3px solid  #dd4b39!important;
 		}
 	}
 	.bk-socialicons-youtube a {
 		background-image: image('/images/icons/youtube.svg');
 		&:hover {
 			background-image: image('/images/icons/youtube-hover.svg');
-			border: 3px solid  #e52d27;
+			border: 3px solid  #e52d27!important;
 		}
 	}
 }
@@ -542,13 +543,13 @@ div[role="main"] .widget {
 				height: 65px;
 				width: 45px;
 				background-image: image('/images/arrow-prev.png');
-				background-color: @color-swatch1;
+				background-color: fade(@color-swatch1, 35%);
 				background-position: center;
 				background-repeat: no-repeat;
 				color: transparent;
 				&:hover {
 					background-image: image('/images/arrow-prev-hov.png');
-					background-color: @color-swatch2;
+					background-color: fade(@color-swatch1, 65%);
 					background-position: center;
 					background-repeat: no-repeat;
 				}
@@ -558,13 +559,13 @@ div[role="main"] .widget {
 				height: 65px;
 				width: 45px;
 				background-image: image('/images/arrow-next.png');
-				background-color: @color-swatch1;
+				background-color: fade(@color-swatch1, 35%);
 				background-position: center;
 				background-repeat: no-repeat;
 				color: transparent;
 				&:hover {
 					background-image: image('/images/arrow-next-hov.png');
-					background-color: @color-swatch2;
+					background-color: fade(@color-swatch1, 65%);
 					background-position: center;
 					background-repeat: no-repeat;
 				}
@@ -630,15 +631,15 @@ div[role="main"] .widget {
 		margin-bottom: 8px;
 		min-width: 100%;
 		&:after {
-			border-top: 1px solid lighten(@color-swatch5, 35%);
+			border-top: 1px solid lighten(@color-swatch5, 28%);
 			content: "";
 			display: block;
 			display: block;
 			position: relative;
 			margin: 20px auto;
-			min-width: 125px;
-			max-width: 200px;
-			width: 25%;
+			min-width: 65px;
+			max-width: 100px;
+			width: 100%;
 		}
 	}
 	.description {
@@ -650,8 +651,10 @@ div[role="main"] .widget {
 			content: "";
 			position: relative;
 			display: inline-block;
-			border-top: 1px solid lighten(@color-swatch5, 35%);
-			width: 25%;
+			border-top: 1px solid lighten(@color-swatch5, 28%);
+			min-width: 65px;
+			max-width: 100px;
+			width: 100%;
 		}
 	}
 }
@@ -665,11 +668,30 @@ div[role="main"] .widget {
 
 div[role="main"] {
 	.widget.responsiveslideshow {
+		margin-bottom: 60px;
+		.title {
+			@media @mobile {
+				font-size: bkscale(@font-swatch2-font-size, 0.8);
+				line-height: bkscale(@font-swatch2-font-size, 0.8);
+			}
+		}
 		.title:after, .description:after {
 			display: none;
 		}
 		.content-wrapper {
 			bottom: 0;
+			@media @mobile {
+				padding: 15px;
+				max-width: 80%;
+			}
+		}
+		@media @mobile {
+			.slideshow-widget-controls {
+				bottom: -100px;
+			}
+			.slideshow-widget .btn-prev, .slideshow-widget .btn-next {
+				top: 60%;
+			}
 		}
 	}
 }

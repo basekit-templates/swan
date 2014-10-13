@@ -134,7 +134,7 @@ a {
 	padding: 8px 5px;
 	@media @tablet {
 		padding: 6px 5px;
-		min-height: 15px;
+		min-height: 22px;
 	}
 }
 
@@ -166,7 +166,7 @@ a {
 .widget.extendednavigation ul {
 	li {
 		@media @tablet {
-			border-bottom: 1px solid lighten(@color-swatch5, 40%);
+			border-bottom: 1px solid lighten(@color-swatch5, 32%);
 			&:last-child {
 				border-bottom: none;
 			}
@@ -217,6 +217,7 @@ a {
 		width: 50px;
 		height: 45px;
 		top: -16px;
+		z-index: 1;
 	}
 	&:after {
 		background: @color-swatch5;
@@ -248,6 +249,9 @@ a {
 	max-width: 65%;
 	margin: 0 auto;
 	bottom: -125px;
+	@media @tablet {
+		bottom: 0;
+	}
 }
 
 
@@ -323,6 +327,9 @@ div[role="main"] {
 			width: auto;
 			@media only screen and (max-width: 900px) {
 				width: 100%;
+			}
+			&:focus {
+				border: 0;
 			}
 		}
 		button.btn {

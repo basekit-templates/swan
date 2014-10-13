@@ -48,8 +48,8 @@
         .ecom-productslist-image-wrap,
         .ecom-featuredproducts-image-wrap {
             margin-bottom: 1em;
-            background-color: darken(@color-swatch1, 3%);
-            background-position: center top;
+            background-color: darken(@color-swatch1, 2%);
+            background-position: center bottom;
             height: auto;
             min-height: 200px;
         }
@@ -225,13 +225,15 @@
     // Basket
 
     .ecombasket-pull {
+        .border-radius(4px);
         width: 142px;
-        padding: 8px 14px 8px 22px;
+        padding: 14px 14px 14px 6spx;
         background-image: image('/images/ic-basket.png');
         background-repeat: no-repeat;
         background-position: 11% 48%;
         background-size: 14px;
         &:hover {
+            background-color: @font-swatch7-background-color-hover;
             background-image: image('/images/ic-basket-hov.png');
             &:hover {
                 p, .basket-count {
@@ -304,6 +306,9 @@
     .ecombasket-item-count-wrapper {
         position: relative;
         top: -2px;
+        .ecombasket-item-count-label {
+            text-transform: none;
+        }
     }
     .ecombasket-remove-button,
     .ecombasket-item-count-wrapper {
@@ -318,10 +323,17 @@
     // Remove Button
 
     .ecombasket-remove-button {
+        background: none;
+        border: 0;
         position: relative;
         top: 10px;
         float: right;
         text-decoration: none!important;
+        text-transform: none;
+        &:hover {
+            color: @color-swatch4;
+            text-decoration: underline;
+        }
     }
     // Price
     .ecombasket-total {
@@ -403,6 +415,16 @@
             &:hover {
                 color: @color-swatch4;
             }
+        }
+    }
+
+    .ecom-product-go-to-checkout-btn {
+        background-color: darken(@color-swatch1, 20%);
+        .border-radius(4px);
+        font-size: @font-swatch7-font-size;
+        padding: 12px 14px;
+        &:hover {
+            text-decoration: none;
         }
     }
 
