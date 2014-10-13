@@ -584,7 +584,14 @@ div[role="main"] .widget {
 		}
 	}
 	.slideshow-widget-controls {
-		margin-top: 0;
+		bottom: -100px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		position: absolute;
+		@media @mobile {
+			bottom: -30px;
+		}
 		.dot {
 			.border-radius(50px);
 			display: inline-block;
@@ -630,16 +637,22 @@ div[role="main"] .widget {
 		line-height: @font-swatch8-line-height;
 		margin-bottom: 8px;
 		min-width: 100%;
+		@media @mobile {
+			font-size: bkscale(@font-swatch8-font-size, 0.8);
+			line-height: bkscale(@font-swatch8-line-height, 0.8);
+			margin-bottom: 0;
+			padding: 5px;
+		}
 		&:after {
 			border-top: 1px solid lighten(@color-swatch5, 28%);
 			content: "";
 			display: block;
 			display: block;
 			position: relative;
-			margin: 20px auto;
+			margin: 20px auto 0;
 			min-width: 65px;
-			max-width: 100px;
-			width: 100%;
+			max-width: 85px;
+			width: 12%;
 		}
 	}
 	.description {
@@ -650,11 +663,12 @@ div[role="main"] .widget {
 		&:after {
 			content: "";
 			position: relative;
-			display: inline-block;
+			display: block;
 			border-top: 1px solid lighten(@color-swatch5, 28%);
+			margin: 20px auto 0;
 			min-width: 65px;
-			max-width: 100px;
-			width: 100%;
+			max-width: 85px;
+			width: 12%;
 		}
 	}
 }
