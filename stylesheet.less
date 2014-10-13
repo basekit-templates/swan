@@ -235,11 +235,13 @@ a {
 }
 
 .widget.extendednavigation .bk-overlay {
-	left: 0 !important;
-	right: 0!important;
-	margin: 0 auto;
-	height: 40px;
-	width: 40px;
+	@media @tablet {
+		left: 0 !important;
+		right: 0!important;
+		margin: 0 auto;
+		height: 40px;
+		width: 40px;
+	}
 }
 
 
