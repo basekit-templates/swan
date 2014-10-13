@@ -179,6 +179,9 @@ a {
 			border-top: 1px solid fade(@color-swatch5, 24%);
 			li {
 				border-bottom: 1px solid fade(@color-swatch5, 15%); 
+				@media @mobile {
+					padding: 5px;
+				}
 				&:last-child {
 					border-bottom: none;
 				}
@@ -188,6 +191,9 @@ a {
 }
 
 .widget.extendednavigation ul li.folder {
+	@media @tablet {
+		margin-right: 0;
+	}
 	&:after {
 		right: 12px;
 	}
@@ -255,14 +261,14 @@ a {
 	text-align: center;
 	padding: 35px 15px 0;
 	max-width: 65%;
-	margin: 0 auto;
+	margin: 0 auto 25px;
 	bottom: -135px;
 	@media @tablet {
 		padding: 20px;
 		max-width: 90%;
 	}
 	@media @mobile {
-		bottom: -60px;
+		bottom: -80px;
 	}
 }
 

@@ -662,6 +662,9 @@ div[role="main"] .widget {
 		line-height: @font-swatch9-line-height;
 		margin: 0 auto 30px;
 		max-width: 800px;
+		@media @mobile {
+			display: none;
+		}
 		&:after {
 			content: "";
 			position: relative;
