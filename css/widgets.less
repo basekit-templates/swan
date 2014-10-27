@@ -70,6 +70,10 @@ button {
 	outline: none;
 }
 
+.widget.tweet {
+	padding: 0;
+}
+
 .blog-search-submit-button {
 	border: none;
 }
@@ -335,6 +339,9 @@ label {
 // Social Icons
 // -----------------------------
 
+.widget.socialicons {
+	.clearfix;
+}
 
 .widget.socialicons span a, .widget.profile .bk-profile-socialicons span a {
 	background-color: transparent;
@@ -440,35 +447,28 @@ div[role="main"] .widget {
 		margin-bottom: 2%;
 		width: 31%;
 		@media @tablet {
-			width: 50%;
+			width: 48%;
 			padding-bottom: 50%;
+		}
+		&:nth-child(even) {
+			@media @tablet {
+				margin-right: 0;
+			}
 		}
 		@media @mobile {
 			width: 100%;
 			padding-bottom: 100%;
 		}
-		span.image-data {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-		}
 		span.image-data:hover {
 			background-color: fade(@color-swatch4, 85%);
-			padding: 25px;
 			.transition(all, 0.25s, ease-in);
 			.title {
 				opacity: 1;
 				color: #fff;
 				font-weight: @font-swatch2-font-weight;
-				-webkit-transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
-				transform: translate3d(0,-50%,0) translate3d(0,-40px,0);
 			}
 			.description {
 				opacity: 1;
-				-webkit-transform: translate3d(0,0,0);
-				transform: translate3d(0,0,0);
 			}
 		}
 		span.inner {
@@ -486,15 +486,11 @@ div[role="main"] .widget {
 			}
 			.title {
 				position: relative;
-				top: 55%;
-				left: 0;
 				font-family: @font-swatch3-font-family;
 				font-size: 17px;
 				line-height: 26px;
-				-webkit-transition: -webkit-transform 0.35s, color 0.35s;
-				transition: transform 0.35s, color 0.35s;
-				-webkit-transform: translate3d(0,-50%,0);
-				transform: translate3d(0,-50%,0);
+				-webkit-transition: color 0.35s;
+				transition: color 0.35s;
 				&:after {
 					content: "";
 					display: block;
@@ -508,18 +504,14 @@ div[role="main"] .widget {
 				font-family: @font-swatch5-font-family;
 				font-size: 14px;
 				line-height: 21px;
-				-webkit-transform: translate3d(0,10px,0);
-				transform: translate3d(0,10px,0);
-				webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-				transition: opacity 0.35s, transform 0.35s;
+				webkit-transition: opacity 0.35s;
+				transition: opacity 0.35s;
 				position: relative;
-				top: 32%;
-				left: 0;
 			}
 		}
 	}
 	.image-data {
-		padding: 30px;
+		padding: 30% 30px 30px;
 		display: block;
 		opacity: 0;
 		.transition(all, 0.5s, ease-out);
@@ -547,6 +539,7 @@ div[role="main"] .widget {
 				background-position: center;
 				background-repeat: no-repeat;
 				color: transparent;
+				text-indent: -9999px;
 				&:hover {
 					background-image: image('/images/arrow-prev-hov.png');
 					background-color: fade(@color-swatch1, 65%);
@@ -563,6 +556,7 @@ div[role="main"] .widget {
 				background-position: center;
 				background-repeat: no-repeat;
 				color: transparent;
+				text-indent: -9999px;
 				&:hover {
 					background-image: image('/images/arrow-next-hov.png');
 					background-color: fade(@color-swatch1, 65%);
@@ -647,7 +641,6 @@ div[role="main"] .widget {
 			border-top: 1px solid lighten(@color-swatch5, 28%);
 			content: "";
 			display: block;
-			display: block;
 			position: relative;
 			margin: 25px auto 0;
 			min-width: 65px;
@@ -697,17 +690,23 @@ div[role="main"] {
 		.title:after, .description:after {
 			display: none;
 		}
+		.description {
+			margin: 0 auto 10px;
+		}
 		.content-wrapper {
 			bottom: 0;
+			margin: 0 auto;
 			@media @mobile {
 				padding: 15px;
 				max-width: 80%;
 			}
 		}
+		.slideshow-widget-controls {
+			bottom: initial;
+			margin: 20px auto;
+			position: relative;
+		}
 		@media @mobile {
-			.slideshow-widget-controls {
-				bottom: -100px;
-			}
 			.slideshow-widget .btn-prev, .slideshow-widget .btn-next {
 				top: 60%;
 			}

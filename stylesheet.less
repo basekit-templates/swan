@@ -87,6 +87,10 @@ a {
 	color: @color-swatch2;
 }
 
+pre {
+	white-space: normal;
+}
+
 
 // -----------------------------
 // Header
@@ -134,7 +138,7 @@ a {
 	padding: 8px 5px;
 	@media @tablet {
 		padding: 6px 5px;
-		min-height: 22px;
+		min-height: 15px;
 	}
 }
 
@@ -145,7 +149,7 @@ a {
 	a {
 		padding: 0 20px 0 0;
 		@media @tablet {
-			padding: 0;
+			padding: 0 20px;
 		}
 		&:after {
 			color: @font-swatch4-color;
@@ -247,7 +251,7 @@ a {
 
 // Slideshow 
 
-.widget.responsiveslideshow {
+/*.widget.responsiveslideshow {
 	margin-bottom: 60px;
 	@media @mobile {
 		margin-bottom: 0;
@@ -261,16 +265,75 @@ a {
 .widget.responsiveslideshow .content-wrapper {
 	background: @color-swatch1;
 	text-align: center;
-	padding: 35px 15px 0;
 	max-width: 65%;
 	margin: 0 auto 25px;
-	bottom: -135px;
+	bottom: -50px;
 	@media @tablet {
 		padding: 20px;
 		max-width: 90%;
 	}
 	@media @mobile {
 		bottom: -80px;
+	}
+	.title {
+		margin-top: 25px;
+	}
+	.description {
+
+	}
+}*/
+
+.widget.feature {
+	overflow: visible;
+	.feature-bgimg {
+		height: auto;
+	}
+	h2 {
+		padding-bottom: 20px;
+	}
+	h3 {
+		color: @color-swatch5;
+		line-height: 32px;
+	}
+}
+
+.widget.feature .feature-bgimg .content {
+	height: auto;
+	min-height: 550px;
+	max-width: 1200px;
+	padding-top: 450px;
+	vertical-align: bottom;
+	@media @tablet {
+		padding-top: 350px;
+	}
+	@media @mobile {
+		padding-top: 250px;
+	}
+	.spare {
+		background: @color-swatch1;
+		margin: 0 auto -50px;
+		max-width: 70%;
+		padding: 40px 40px 0;
+		position: relative;
+		text-align: center;
+		@media @tablet {
+			max-width: 80%;
+			adding: 30px 30px 0;
+		}
+		@media @mobile {
+			max-width: 90%;
+			adding: 20px 20px 0;
+		}
+	}
+	h2 span:after, h3 span:after {
+		border-top: 1px solid lighten(@color-swatch5, 28%);
+		content: "";
+		display: block;
+		margin: 15px auto 0;
+		min-width: 65px;
+		max-width: 85px;
+		position: relative;
+		width: 12%;
 	}
 }
 
@@ -280,12 +343,14 @@ a {
 // Main
 // -----------------------------
 
-.widget.responsiveslideshow + div[role="main"] {
-	margin-top: 120px;
-	@media @mobile {
-		margin-top: 35px;
-	}
+
+.bk-pt-home div[role="main"] {
+	padding: 65px 20px;
 }
+
+.widget.feature + div[role="main"] + .widget {
+	margin-top: 80px;
+} 
 
 div[role="main"] {
 	padding: 45px 20px;
