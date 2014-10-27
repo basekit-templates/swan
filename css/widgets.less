@@ -511,7 +511,7 @@ div[role="main"] .widget {
 		}
 	}
 	.image-data {
-		padding: 30% 30px 30px;
+		padding: 32% 30px 30px;
 		display: block;
 		opacity: 0;
 		.transition(all, 0.5s, ease-out);
@@ -525,6 +525,7 @@ div[role="main"] .widget {
 // Slideshow
 
 .widget.responsiveslideshow {
+	margin-bottom: 60px!important;
 	.btn-play, &:hover span.btn-play {
 		display: none;
 	}
@@ -576,16 +577,24 @@ div[role="main"] .widget {
 				}
 			}
 		}
+		.content-wrapper {
+			background: @color-swatch1;
+			margin: 0 auto;
+			max-width: 65%;
+			padding: 20px 20px 0;
+			text-align: center;
+			@media @tablet {
+				max-width: 80%;
+			}
+			@media @mobile {
+				max-width: 90%;
+			}
+		}
 	}
 	.slideshow-widget-controls {
-		bottom: -100px;
-		left: 0;
-		right: 0;
-		margin: 0 auto;
-		position: absolute;
-		@media @mobile {
-			bottom: -30px;
-		}
+		bottom: initial;
+		margin: 20px auto;
+		position: relative;
 		.dot {
 			.border-radius(50px);
 			display: inline-block;
@@ -604,14 +613,20 @@ div[role="main"] .widget {
 				cursor: pointer;
 			}
 		}
+		@media @mobile {
+			display: none;
+		}
 	}
 }
 
 .widget.responsiveslideshow .slideshow-image-list,
 .widget.responsiveslideshow .slideshow-widget {
+	@media @tablet {
+		height: auto;
+	}
 	@media @mobile {
-		height: 230px;
-		min-height: 250px;
+		height: 350px;
+		min-height: 350px;
 	}
 }
 
@@ -632,8 +647,8 @@ div[role="main"] .widget {
 		margin-bottom: 16px;
 		min-width: 100%;
 		@media @mobile {
-			font-size: bkscale(@font-swatch8-font-size, 0.8);
-			line-height: bkscale(@font-swatch8-line-height, 0.8);
+			font-size: bkscale(@font-swatch2-font-size, 0.8);
+			line-height: bkscale(@font-swatch2-font-size, 0.8);
 			margin-bottom: 0;
 			padding: 5px;
 		}
@@ -653,7 +668,7 @@ div[role="main"] .widget {
 		display: block;
 		font-size: @font-swatch9-font-size;
 		line-height: @font-swatch9-line-height;
-		margin: 0 auto 30px;
+		margin: 0 auto 10px;
 		max-width: 800px;
 		@media @mobile {
 			display: none;
@@ -673,47 +688,6 @@ div[role="main"] .widget {
 .widget.responsiveslideshow span.inner img {
 	display: initial;
 }
-
-
-// Slideshow (Draggable into the main zone)
-
-
-div[role="main"] {
-	.widget.responsiveslideshow {
-		margin-bottom: 60px;
-		.title {
-			@media @mobile {
-				font-size: bkscale(@font-swatch2-font-size, 0.8);
-				line-height: bkscale(@font-swatch2-font-size, 0.8);
-			}
-		}
-		.title:after, .description:after {
-			display: none;
-		}
-		.description {
-			margin: 0 auto 10px;
-		}
-		.content-wrapper {
-			bottom: 0;
-			margin: 0 auto;
-			@media @mobile {
-				padding: 15px;
-				max-width: 80%;
-			}
-		}
-		.slideshow-widget-controls {
-			bottom: initial;
-			margin: 20px auto;
-			position: relative;
-		}
-		@media @mobile {
-			.slideshow-widget .btn-prev, .slideshow-widget .btn-next {
-				top: 60%;
-			}
-		}
-	}
-}
-
 
 // Twitter
 
