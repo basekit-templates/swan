@@ -14,7 +14,7 @@
 
 /*	===============================
 	Colour Swatches
-	===============================	
+	===============================
 	"color1": == Background
 	"color2": == Contrast colour
 	"color3": == Button colour
@@ -27,7 +27,7 @@
 
 /*	===============================
 	Font Swatches
-	===============================	
+	===============================
 	"font1":  == Heading 1
 	"font2":  == Heading 2
 	"font3":  == Heading 3
@@ -54,11 +54,11 @@
 }
 
 .transition (@prop: all, @time: 0.5s, @ease: ease) {
-	-webkit-transition:  @prop @time @ease;  
+	-webkit-transition:  @prop @time @ease;
 	-moz-transition:     @prop @time @ease;
-	-ms-transition:      @prop @time @ease; 
+	-ms-transition:      @prop @time @ease;
 	-o-transition:       @prop @time @ease;
-	transition: 		 @prop @time @ease;  
+	transition: 		 @prop @time @ease;
 }
 
 .rotate (@deg) {
@@ -102,7 +102,7 @@ pre {
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
-    display: flex;    
+    display: flex;
     min-height: 100vh;
     flex-direction: column;
      -webkit-flex-direction: column;
@@ -152,7 +152,7 @@ pre {
 		line-height: @font-swatch10-line-height;
 		@media @mobile {
 			font-size: bkscale(@font-swatch10-font-size, 0.9);
-			line-height: bkscale(@font-swatch10-line-height, 0.9);	
+			line-height: bkscale(@font-swatch10-line-height, 0.9);
 		}
 	}
 }
@@ -207,12 +207,15 @@ pre {
 		}
 		&:hover ul {
 			background: lighten(@color-swatch1, 2%);
-			border-bottom: 1px solid fade(@color-swatch5, 18%); 
-			border-left: 1px solid fade(@color-swatch5, 12%); 
-			border-right: 1px solid fade(@color-swatch5, 12%); 
+			border-bottom: 1px solid fade(@color-swatch5, 18%);
+			border-left: 1px solid fade(@color-swatch5, 12%);
+			border-right: 1px solid fade(@color-swatch5, 12%);
 			border-top: 1px solid fade(@color-swatch5, 24%);
+			@media @mobile, @tablet {
+				max-width: 100%;
+			}
 			li {
-				border-bottom: 1px solid fade(@color-swatch5, 15%); 
+				border-bottom: 1px solid fade(@color-swatch5, 15%);
 				@media @mobile {
 					padding: 5px;
 				}
@@ -241,9 +244,7 @@ pre {
 		display: none;
 	}
 	ul li a {
-		@media @mobile {
-			padding: 8px 15px;
-		}
+		padding: 8px 15px;
 		span.text {
 			padding: 0;
 		}
@@ -281,7 +282,7 @@ pre {
 }
 
 
-// Slideshow 
+// Slideshow
 
 /*.widget.responsiveslideshow {
 	margin-bottom: 60px;
@@ -394,7 +395,7 @@ pre {
 
 .widget.feature + div[role="main"] + .widget {
 	margin-top: 80px;
-} 
+}
 
 div[role="main"] {
 	padding: 45px 20px;
@@ -417,13 +418,20 @@ div[role="main"] {
 		display: inline-block;
 	}
 	.bk-signup {
-		background: lighten(@color-swatch7, 6%);
-		padding: 45px 20px 25px;
+
 		width: 30%;
+
+		.widget.signupform {
+			background: lighten(@color-swatch7, 6%);
+			padding: 45px 20px 25px;
+			@media @tablet {
+				.border-radius(4px);
+				padding: 25px 20px;
+				margin-top: 25px;
+			}
+		}
+
 		@media @tablet {
-			.border-radius(4px);
-			padding: 25px 20px;
-			margin-top: 25px;
 			width: 100%;
 		}
 	}

@@ -33,7 +33,7 @@
 	margin-bottom: 10px;
 	a {
 		background-color: darken(@font-swatch7-background-color, 12%);
-		.border-radius(50px);
+		.border-radius(4px);
 		color: @font-swatch7-color;
 		font-size: @font-swatch7-font-size;
 		padding: 8px 10px;
@@ -47,26 +47,18 @@
 
 .blog-post-feature-image-wrap {
 	background-color: darken(@color-swatch1, 2%);
-	background-image: none!important;
 	margin-bottom: 1.3em;
 	min-height: 450px;
 	position: relative;
+	background-size:  cover;
+	background-position: center;
 	@media @mobile {
 		margin-bottom: .5em;
 		min-height: 150px;
 		max-height: 400px;
 	}
 	img {
-		bottom: 0;
-		left: 0;
-		right: 0;
-		display: block;
-		height: auto;
-		margin: 0 auto;
-		max-height: 450px;
-		max-width: 100%;
-		padding: 0;
-		position: absolute;
+		display: none;
 	}
 }
 
