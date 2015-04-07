@@ -526,11 +526,10 @@ div[role="main"] .widget {
 
 // Slideshow
 
+
 .widget.responsiveslideshow {
-	margin-bottom: 60px!important;
-	.btn-play, &:hover span.btn-play {
-		display: none;
-	}
+	margin-bottom: 60px !important;
+
 	.slideshow-widget {
 		.btns-move {
 			.btn-prev {
@@ -567,6 +566,8 @@ div[role="main"] .widget {
 					background-repeat: no-repeat;
 				}
 			}
+
+
 			@media @mobile {
 				.btn-next,
 				.btn-prev {
@@ -579,6 +580,29 @@ div[role="main"] .widget {
 				}
 			}
 		}
+
+		.btn-play {
+			width: 65px;
+			height: 65px;
+			top: 50%;
+			margin-top: -33px;
+
+			@media @mobile {
+				width: 40px;
+				height: 40px;
+				margin-top: -20px;
+			}
+
+			&:after {
+				font-size: 23px;
+				line-height: 71px;
+				@media @mobile {
+					line-height: 44px;
+  					font-size: 17px;
+				}
+			}
+		}
+
 		.content-wrapper {
 			background: @color-swatch1;
 			margin: 0 auto;
