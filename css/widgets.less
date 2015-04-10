@@ -61,6 +61,10 @@ button.btn,
 		line-height: @font-swatch7-line-height;
 		color: @font-swatch7-color;
 		letter-spacing: @font-swatch7-letter-spacing;
+		background-position: 10px;
+		background-repeat: no-repeat;
+		border: 0;
+		text-decoration: none;
 	}
 
 	&:hover {
@@ -274,14 +278,46 @@ label {
     }
 }
 
-.widget.signupform fieldset button.btn {
-	/*max-width: 18%;
-	width: 100%;*/
-	@media @mobile {
-		margin-top: 0;
-		max-width: 100%;
+.widget.signupform {
+	.form-group {
+		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+		display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+		display: -ms-flexbox;      /* TWEENER - IE 10 */
+		display: -webkit-flex;     /* NEW - Chrome */
+		display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+		-webkit-flex-flow: row wrap;
+		-moz-flex-flow: row wrap;
+		-ms-flex-flow: row wrap;
+		-o-flex-flow: row wrap;
+		flex-flow: row wrap;
+    }
+    input, button {
+    	webkit-flex-grow: 1;
+		-moz-flex-grow: 1;
+		-ms-flex-grow: 1;
+		flex-grow:1;
+    }
+    input {
+
+    	@media @mobile {
+    		width: 100%;
+    		margin-right: 0;
+    	}
+		&+ button {
+			max-width: 25%;
+
+			@media @tablet {
+				max-width: 35%;
+			}
+
+			@media @mobile {
+				max-width: 100%;
+			}
+		}
 	}
 }
+
 
 
 // Blog Search Form
@@ -313,7 +349,7 @@ label {
 
 // Inputs + Button
 
-.widget.profile form fieldset input, .widget.signupform form fieldset input {
+.widget.profile form fieldset input {
 	margin-right: 5px;
 	/*width: 80%;*/
 	@media @mobile {
@@ -662,8 +698,8 @@ div[role="main"] .widget {
 		height: auto;
 	}
 	@media @mobile {
-		height: 350px;
-		min-height: 350px;
+		height: 400px;
+		min-height: 400px;
 	}
 }
 
@@ -671,7 +707,7 @@ div[role="main"] .widget {
 	min-height: 550px;
 	height: auto;
 	@media @mobile {
-		min-height: 350px;
+		min-height: 400px;
 	}
 }
 
@@ -681,7 +717,7 @@ div[role="main"] .widget {
 		display: block;
 		font-size: @font-swatch8-font-size;
 		line-height: @font-swatch8-line-height;
-		margin-bottom: 16px;
+		margin-bottom: 0;
 		min-width: 100%;
 		@media @mobile {
 			font-size: bkscale(@font-swatch2-font-size, 0.8);
@@ -694,7 +730,7 @@ div[role="main"] .widget {
 			content: "";
 			display: block;
 			position: relative;
-			margin: 25px auto 0;
+			margin: 20px auto 0;
 			min-width: 65px;
 			max-width: 85px;
 			width: 12%;
@@ -708,7 +744,9 @@ div[role="main"] .widget {
 		margin: 0 auto 10px;
 		max-width: 800px;
 		@media @mobile {
-			display: none;
+			font-size: 13px;
+			line-height: 21px;
+			margin-bottom: 0;
 		}
 		&:after {
 			content: "";
@@ -719,6 +757,10 @@ div[role="main"] .widget {
 			min-width: 65px;
 			max-width: 85px;
 			width: 12%;
+
+			@media @mobile {
+				display: none;
+			}
 		}
 	}
 }
