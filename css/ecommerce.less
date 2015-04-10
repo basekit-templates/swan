@@ -121,7 +121,7 @@
         height: 48px;
         margin-top: 5px;
         margin-bottom: 12px;
-        padding: 8px 33px 8px 8px;
+        padding: 8px;
         border: 1px solid darken(@color-swatch1, 10%);
         background-color: @color-swatch6;
         color: @color-swatch5;
@@ -418,11 +418,13 @@
     }
 
     .ecom-product-go-to-checkout-btn {
-        background-color: darken(@color-swatch1, 20%);
+        background-color: darken(@color-swatch1, 25%);
         .border-radius(4px);
         font-size: @font-swatch7-font-size;
         padding: 12px 14px;
+        .transition(background-color, 0.5s, ease-in-out);
         &:hover {
+            background-color: darken(@color-swatch1, 20%);
             text-decoration: none;
         }
     }
@@ -528,10 +530,10 @@
             font-size: 14px;
         }
         button {
-            background: transparent;
+            background: fade(@color-swatch4, 20%);
             .border-radius(50px);
-            width: 24px;
-            height: 24px;
+            width: 25px;
+            height: 25px;
             padding: 1px 9px;
             margin: 0;
             border: 0;
@@ -540,6 +542,7 @@
             font-family: @font-swatch4-font-family;
             font-weight: @font-swatch2-font-weight;
             color: @color-swatch5;
+            min-width: 25px;
             vertical-align: middle;
             &:hover {
                 background-color: transparent;

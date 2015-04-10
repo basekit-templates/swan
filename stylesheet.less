@@ -175,6 +175,11 @@ pre {
 	&:last-child a:after {
 		display: none;
 	}
+	&.selected a, 
+	&.selected > .text, 
+	&.selected .selected .text {
+		color: @font-swatch4-color;
+	}
 	a {
 		padding: 0 20px 0 0;
 		@media @tablet {

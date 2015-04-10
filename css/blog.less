@@ -3,6 +3,41 @@
 // Blog
 // -----------------------------
 
+.widget.blogsearch {
+	form label {
+		color: @font-swatch4-color;
+		width: 100%;
+	}
+	.form-group {
+		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+		display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+		display: -ms-flexbox;      /* TWEENER - IE 10 */
+		display: -webkit-flex;     /* NEW - Chrome */
+		display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+		-webkit-flex-flow: row wrap;
+		-moz-flex-flow: row wrap;
+		-ms-flex-flow: row wrap;
+		-o-flex-flow: row wrap;
+		flex-flow: row wrap;
+	}
+	input, button {
+		-webkit-flex-grow: 1;
+		-moz-flex-grow: 1;
+		-ms-flex-grow: 1;
+		flex-grow:1;
+	}
+	form .blog-search-input {
+		margin-right: 5px;
+		&+ button {
+			max-width: 25%;
+
+			@media @tablet {
+				max-width: 35%;
+			}
+		}
+	}
+}
 
 .blog-post-item {
 	margin: 0 0 10px;
@@ -263,6 +298,10 @@
 	font-family: @font-swatch5-font-family;;
 	height: auto;
 	.transition(.5s, all, ease-out);
+
+	@media @mobile {
+		padding: 2px 8px;
+	}
 	&:after {
 		color: #a5a5a5;
 		content: "\2662";
@@ -271,6 +310,10 @@
 		margin-left: 20px;
 		position: relative;
 		vertical-align: top;
+
+		@media @mobile {
+			margin-left: 10px;
+		}
 	}
 	&:last-child:after {
 		display: none;
