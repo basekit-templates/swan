@@ -191,6 +191,7 @@
             position: relative;
             margin: 0;
             padding: 4px 14px;
+            margin-left: -4px!important;
             margin-top: 5px!important;
             @media @mobile {
                 margin: 20px 0 10px;
@@ -372,6 +373,12 @@
     }
     .ecom-product-preview-image-wrap {
         text-align: left;
+
+        img {
+            @media @mobile {
+                width: 100%;
+            }
+        }
     }
 
     // Price
