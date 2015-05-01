@@ -1,7 +1,7 @@
 {
 	"name":"Swan",
 	"thumbnail":"swan.png",
-	"screenshot":"swan.png",
+	"screenshot":"swan-screenshot.jpg",
     "templateType":"standard",
     "tags": { "en": ["minimal", "modern", "light", "social", "minimal", "classic", "slideshow"] },
     "pageTypes":["home"],
