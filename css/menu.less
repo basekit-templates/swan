@@ -67,6 +67,7 @@
 	}
 	.menu-items li {
 		padding: 1em 0 1.5em;
+		overflow: visible;
 	}
 	.menu-name {
 		font-weight: @font-swatch2-font-weight;
@@ -87,21 +88,22 @@
 		padding: 0;
 	}
 	.inner-item {
-		display: -webkit-box;      
-		display: -moz-box;         
-		display: -ms-flexbox;     
-		display: -webkit-flex;     
-		display: flex;         
+
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
 		-webkit-flex-direction: column;
 	    -ms-flex-direction: column;
 	    flex-direction: column;
 		text-align: center;
 	}
 	.menu-item-name {
-		-webkit-box-ordinal-group: 2;  
-		-moz-box-ordinal-group: 2;     
-		-ms-flex-order: 2;     
-		-webkit-order: 2;  
+		-webkit-box-ordinal-group: 2;
+		-moz-box-ordinal-group: 2;
+		-ms-flex-order: 2;
+		-webkit-order: 2;
 		order: 2;
 
 		background: @color-swatch1;
@@ -109,17 +111,17 @@
 		padding: 20px 10px 2px;
 	}
 	.menu-item-image-wrap {
-		-webkit-box-ordinal-group: 1;  
-	    -moz-box-ordinal-group: 1;     
-	    -ms-flex-order: 1;     
-	    -webkit-order: 1;  
+		-webkit-box-ordinal-group: 1;
+	    -moz-box-ordinal-group: 1;
+	    -ms-flex-order: 1;
+	    -webkit-order: 1;
 	    order: 1;
 	}
 	.menu-item-price {
-		-webkit-box-ordinal-group: 3;  
-		-moz-box-ordinal-group: 3;     
-		-ms-flex-order: 3;     
-		-webkit-order: 3;  
+		-webkit-box-ordinal-group: 3;
+		-moz-box-ordinal-group: 3;
+		-ms-flex-order: 3;
+		-webkit-order: 3;
 		order: 3;
 		p {
 			color: @color-swatch2;
@@ -128,10 +130,10 @@
 		}
 	}
 	.menu-item-description {
-		-webkit-box-ordinal-group: 4;  
-		-moz-box-ordinal-group: 4;     
-		-ms-flex-order: 4;     
-		-webkit-order: 4;  
+		-webkit-box-ordinal-group: 4;
+		-moz-box-ordinal-group: 4;
+		-ms-flex-order: 4;
+		-webkit-order: 4;
 		order: 4;
 
 		color: @color-swatch5;
@@ -146,10 +148,10 @@
 		}
 	}
 	.menu-item-nutritional-prop {
-		-webkit-box-ordinal-group: 6;  
-		-moz-box-ordinal-group: 6;     
-		-ms-flex-order: 6;     
-		-webkit-order: 6;  
+		-webkit-box-ordinal-group: 6;
+		-moz-box-ordinal-group: 6;
+		-ms-flex-order: 6;
+		-webkit-order: 6;
 		order: 6;
 
 		color: @color-swatch5;
@@ -160,10 +162,10 @@
 		margin-bottom: 10px;
 	}
 	.menu-item-nutritional-title {
-		-webkit-box-ordinal-group: 5;  
-		-moz-box-ordinal-group: 5;     
-		-ms-flex-order: 5;     
-		-webkit-order: 5;  
+		-webkit-box-ordinal-group: 5;
+		-moz-box-ordinal-group: 5;
+		-ms-flex-order: 5;
+		-webkit-order: 5;
 		order: 5;
 
 		color: darken(@color-swatch5, 5%);
@@ -174,10 +176,10 @@
 		line-height: bkscale(@font-swatch5-line-height, 0.9);
 	}
 	.menu-section-item-dietary-props {
-		-webkit-box-ordinal-group: 7;  
-		-moz-box-ordinal-group: 7;     
-		-ms-flex-order: 7;     
-		-webkit-order: 7;  
+		-webkit-box-ordinal-group: 7;
+		-moz-box-ordinal-group: 7;
+		-ms-flex-order: 7;
+		-webkit-order: 7;
 		order: 7;
 
 		color: @color-swatch5;
@@ -219,7 +221,7 @@
 		background-color: darken(@color-swatch1, 2%);
 		bottom: -40px;
 		min-height: 205px;
-		overflow: hidden;
+		//overflow: hidden;
 		position: relative;
 		z-index: -1;
 		img {
