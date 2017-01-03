@@ -4,11 +4,13 @@
 	<div class="container">
 		{{widget('content', 'footer-content', {content: '<h3>This is a content widget.</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus, elit eu viverra sollicitudin, erat ligula pretium mauris
 		sit amet mattis purus lorem a erat.</p>', lines: 'all'})|raw}}
-		
+
 		<div class="bk-signup">
 			{{widget('signupform', 'footer-signup', {'text': 'Send', 'label': 'Your Email', 'formTitle': 'Signup Form', 'email': 'profile'})|raw}}
 		</div>
+    </div>
 
+    <div class="container">
 		{{widget('profile', 'footer-copyright', { 'profileType':'copyright', 'copyright':'profile'})|raw}}
-	</div>
+    </div>
 </footer>
