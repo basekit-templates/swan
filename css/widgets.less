@@ -675,8 +675,13 @@ div[role="main"] .widget {
 			background: @color-swatch1;
 			margin: 0 auto;
 			max-width: 65%;
-			padding: 20px 20px 0;
+			padding: 0;
 			text-align: center;
+
+			&:empty {
+				padding: 0;
+			}
+
 			@media @tablet {
 				max-width: 80%;
 			}
@@ -733,6 +738,10 @@ div[role="main"] .widget {
 }
 
 .widget.responsiveslideshow {
+	.title,
+	.description {
+		padding: 20px 20px 0;
+	}
 	.title {
 		color: @font-swatch4-color;
 		display: block;
@@ -751,7 +760,7 @@ div[role="main"] .widget {
 			content: "";
 			display: block;
 			position: relative;
-			margin: 20px auto 0;
+			margin: 15px auto 0;
 			min-width: 65px;
 			max-width: 85px;
 			width: 12%;
@@ -774,7 +783,7 @@ div[role="main"] .widget {
 			position: relative;
 			display: block;
 			border-top: 1px solid lighten(@color-swatch5, 28%);
-			margin: 25px auto 0;
+			margin: 20px auto 0;
 			min-width: 65px;
 			max-width: 85px;
 			width: 12%;
