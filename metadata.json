@@ -1,5 +1,6 @@
 {
 	"name":"Swan",
+	"versionTenCompatible": 1,
 	"thumbnail":"swan.png",
 	"screenshot":"swan-screenshot.jpg",
     "templateType":"standard",
