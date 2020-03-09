@@ -6,7 +6,7 @@
 		{% include basekit.headScript %}
 	</head>
 
-	<body class="{{ page.backgroundClass }} {{ site.colorSwatch }}">
+	<body class="{{ page.backgroundClass }} {{ site.colorSwatch }}" {{ isV10sSite ? 'id="migrated-site"' : '' }}>
 
 		{% block content %}
 		{% endblock %}
