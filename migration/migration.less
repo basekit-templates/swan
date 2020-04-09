@@ -4,110 +4,34 @@
 
 
 #migrated-site {
+    
+    height: 100%;
 
 
     // Stylesheet overrides
     // -----------------------------
 
 
-    &.row-editing,
-    &.is-move-mode {
-
-        [data-widget-type="feature"],
-        .template-header {
-            display: none;
-            visibility: hidden;
-        }
-
-        .template-content.container #page-zones__main {
-            position: fixed;
-        }
-    }
-
-
-    .template-content.container,
-    .main-content,
     .container {
+        width: 100%;
         max-width: 100%;
         padding: 0;
-        width: 100%;
     }
-
-
-    .template-content,
-    .template-content.container {
-        margin: 0 auto;
+    
+    
+    .row {
+        margin-left: 0;
+    }
+    
+    
+    .bk-pt-home div[role="main"],
+    .bk-pt-default div[role="main"] {
         padding: 0;
     }
-
-
-    .template-content.container,
-    .bk-tpl-hidden + .template-header + .template-content.container {
-
-        &:before {
-            display: none;
-            visibility: hidden;
-        }
-
-        #page-zones__main {
-            top: 0;
-        }
+    
+    .widget[data-name="row"] {
+        margin-bottom: 0;
     }
-
-
-    // Replaces overlapping feature box 
-    [data-widget-type="feature"]:not(.bk-tpl-hidden) + .template-header + .template-content.container:before {
-        background-color: @color__body--background;
-        content: "";
-        display: block;
-        height: 70px;
-        left: 0;
-        margin: 0 auto;
-        max-width: 1200px;
-        position: absolute;
-        right: 0;
-        top: -70px;
-        width: 90%;
-        visibility: visible;
-
-        @media @bp-desktop {
-            display: none;
-            visibility: hidden;
-        }
-    }
-
-
-    // Brings widgets up into the overlapping box
-    [data-widget-type="feature"]:not(.bk-tpl-hidden) + .template-header + .template-content.container #page-zones__main {
-        position: relative;
-        top: -70px;
-
-        @media @bp-desktop {
-            top: 0;
-        }
-    }
-
-
-    [data-name="row"] .social-link {
-        padding: 6px;
-
-        &:before {
-            margin-right: 0;
-        }
-    }
-
-
-    .bk-pt-default .footer-wrapper {
-        margin-top: 20px;
-    }
-
-
-    .widget__item--visibility {
-        bottom: 100px;
-        left: 20px;
-        top: initial;
-    }
-
 
 
 
@@ -120,61 +44,56 @@
     #page-zones__main:empty,
     #page-zones__main > .widget:not([data-name="row"]),
     .row:not(.row--width-no-padding) .row__container,
-    .template-footer,
-    &:not(.row-editing):not(.is-move-mode) [data-widget-type="feature"]:not(.bk-tpl-hidden) + .template-header + .template-content.container #page-zones__main > .widget:first-child {
+    .bk-footer .container {
+        max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
-        max-width: 1200px;
         width: 90%;
     }
-
-
-    &:not(.row-editing):not(.is-move-mode) .template-content.container #page-zones__main > .widget:first-child {
-        @media @bp-desktop {
-            max-width: 100%;
-            width: 100%;
+    [data-rowtype="image-text-5a"],
+    [data-rowtype="image-text-5b"],
+    [data-rowtype="hero-7a"]{
+        .row__container {
+            width: 100% !important;
+            max-width: 100% !important;
         }
     }
-
-
-    &:not(.row-editing):not(.is-move-mode) .bk-tpl-hidden + .template-header + .template-content.container  #page-zones__main > .widget:first-child {
-        max-width: 100%;
-        width: 100%;
-    }
-
+    
     
     // Adds spacing to a section when a widget follows it
     #page-zones__main > [data-name="row"] + .widget:not([data-name="row"]),
     #page-zones__main > .widget:not([data-name="row"]) + [data-name="row"]:not(:last-child),
-    &.edit #page-zones__main-overlay + .widget:not([data-name="row"]) {
-        margin-top: 20px;
-    }
-    
-    
-    // Add spacing to first widget
+    &.edit #page-zones__main-overlay + .widget:not([data-name="row"]),
     #page-zones__main > .widget:not([data-name="row"]):first-child {
-        margin-top: 60px;
+        margin-top: 65px;
+    }
+    .bk-pt-default #page-zones__main > .widget:not([data-name="row"]):first-child {
+        margin-top: 45px;
     }
 
-    .template-content.container #page-zones__main > .widget:not([data-name="row"]):first-child {
-        margin-top: 0;
-        padding-top: 50px;
+    
+    // Move spacing to last widget in the main zone (not sections)
+    #page-zones__main > .widget:not([data-name="row"]):last-child {
+        margin-bottom: 65px;
     }
     
     
-    // Remove spacing on last widget in section column
-    [data-name="row"] [data-name="responsivecolumns"] .column .widget {
-        margin-bottom: 0;
-    }
-    
-    
-    // Remove spacing from first light section on default page
-    .page--default #page-zones__main > .style--light:first-child .row--style-light .row__container {
-        padding-top: 0;
-    }
-    
-    // Remove spacing from first light section
-    #page-zones__main > [data-name="row"].style--light + .widget:not([data-name="row"]) {
-        margin-top: 0;
+    // Widget styles
+    [data-name="row"] {
+        .widget--zone-widget {
+            margin-bottom: 0;
+        }
+
+        .row__container > .widget + .widget {
+            margin-top: 12px;
+        }
+        .widget.gallery ul li {
+            margin-right: inherit;
+            margin-bottom: inherit;
+            float: inherit;
+        }
+        .widget.socialicons span a {
+            opacity: 1;
+        }
     }
 }

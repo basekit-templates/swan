@@ -520,7 +520,7 @@ div[role="main"] .widget {
 
 .widget.gallery {
 	margin: 20px 0 20px -0.5%;
-	ul li {
+	ul:not(.widget__list) li {
 		margin-right: 2.33%;
 		margin-bottom: 2%;
 		width: 31%;
@@ -873,7 +873,7 @@ div[role="main"] .widget {
 
 div[role="main"] {
 	.widget.content {
-		ul {
+		ul:not(.widget__list) {
 			padding-left: 0;
 			li {
 				list-style: none;
