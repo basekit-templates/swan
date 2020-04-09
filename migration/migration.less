@@ -1,0 +1,99 @@
+// -----------------------------
+// Migration Styles
+// -----------------------------
+
+
+#migrated-site {
+    
+    height: 100%;
+
+
+    // Stylesheet overrides
+    // -----------------------------
+
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    
+    .row {
+        margin-left: 0;
+    }
+    
+    
+    .bk-pt-home div[role="main"],
+    .bk-pt-default div[role="main"] {
+        padding: 0;
+    }
+    
+    .widget[data-name="row"] {
+        margin-bottom: 0;
+    }
+
+
+
+    // Migration styles
+    // -----------------------------
+    
+    
+    // Applies spacing to widgets to mimic container width
+    .empty-zone,
+    #page-zones__main:empty,
+    #page-zones__main > .widget:not([data-name="row"]),
+    .row:not(.row--width-no-padding) .row__container,
+    .bk-footer .container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+    }
+    [data-rowtype="image-text-5a"],
+    [data-rowtype="image-text-5b"],
+    [data-rowtype="hero-7a"]{
+        .row__container {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+    }
+    
+    
+    // Adds spacing to a section when a widget follows it
+    #page-zones__main > [data-name="row"] + .widget:not([data-name="row"]),
+    #page-zones__main > .widget:not([data-name="row"]) + [data-name="row"]:not(:last-child),
+    &.edit #page-zones__main-overlay + .widget:not([data-name="row"]),
+    #page-zones__main > .widget:not([data-name="row"]):first-child {
+        margin-top: 65px;
+    }
+    .bk-pt-default #page-zones__main > .widget:not([data-name="row"]):first-child {
+        margin-top: 45px;
+    }
+
+    
+    // Move spacing to last widget in the main zone (not sections)
+    #page-zones__main > .widget:not([data-name="row"]):last-child {
+        margin-bottom: 65px;
+    }
+    
+    
+    // Widget styles
+    [data-name="row"] {
+        .widget--zone-widget {
+            margin-bottom: 0;
+        }
+
+        .row__container > .widget + .widget {
+            margin-top: 12px;
+        }
+        .widget.gallery ul li {
+            margin-right: inherit;
+            margin-bottom: inherit;
+            float: inherit;
+        }
+        .widget.socialicons span a {
+            opacity: 1;
+        }
+    }
+}
