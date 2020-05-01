@@ -186,10 +186,15 @@ label {
 
 .widget.contactform,
 .widget.advancedcontactform {
+    
 	label {
 		margin-bottom: 8px;
 	}
-	input:not(.js-terms-input), textarea:not(.js-terms-input) {
+	
+	.input--single-line:not(.js-terms-input),
+	.email,
+	select,
+	textarea {
 		background-color: @color-swatch6;
 		border: 1px solid lighten(@color-swatch5, 30%);
 		.border-radius(4px);
@@ -198,16 +203,15 @@ label {
 		outline: none;
 		margin-bottom: 20px;
 		padding: 10px 15px;
-		-webkit-appearance: none;
-	    -moz-appearance: none;
-	    appearance: none;
 	    .transition(all, .25s, ease-out);
 	    &:focus {
 	    	border: 1px solid lighten(@color-swatch5, 20%);
 	    	color: @color-swatch5;
 	    }
 	}
-	input:not(.js-terms-input):before {
+	
+	.input--single-line:not(.js-terms-input):before,
+	.email:before {
 		background-image: image('/images/email-submit-icon.png');
 		background-size: 30px 30px;
 		background-position: 11px 8px;
@@ -215,7 +219,7 @@ label {
 		content: "";
 		display: inline-block;
 	}
-	textarea:not(.js-terms-input) {
+	textarea {
 		&:before {
 			background-image: image('/images/email-submit-icon.png');
 			background-size: 30px 30px;
